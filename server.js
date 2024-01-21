@@ -6,11 +6,12 @@ const path = require('path');
 const authRoutes = require('./routes/authRoutes');
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-mongoose.connect('mongodb://localhost:27017/restaurantDB', {
+mongoose.connect('mongodb://127.0.0.1:27017/restaurantDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
